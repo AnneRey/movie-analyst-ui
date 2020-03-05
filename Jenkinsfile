@@ -3,7 +3,7 @@ pipeline {
     stages{
         stage('Clone'){
             steps {
-                git https://github.com/AnneRey/movie-analyst-ui.git
+                git 'https://github.com/AnneRey/movie-analyst-ui.git'
                 sh "pwd"
                 sh "ls"
             }
