@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    stages{
+   stages{
         stage('Clone'){
             steps {
                 git https://github.com/AnneRey/movie-analyst-ui.git
@@ -9,13 +9,13 @@ pipeline {
             }
         }
         stage('Package'){
-            step{
+            steps{
                 sh "docker build -t movie-analyst-ui localhost:5000/frontimage"
                 sh "docker images"
             }
         }
         stage('Push to registry'){
-            step{
+            steps{
                 sh "docker push localhost:5000/frontimage"
             }
         }
