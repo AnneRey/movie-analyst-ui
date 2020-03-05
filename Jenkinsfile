@@ -11,7 +11,8 @@ pipeline {
         }
         stage('Package'){
             steps{
-                sh "sudo docker build -t localhost:5000/frontimage ."
+                sh "sudo -s"
+                sh "docker build -t localhost:5000/frontimage ."
                 sh "docker images"
             }
         }
