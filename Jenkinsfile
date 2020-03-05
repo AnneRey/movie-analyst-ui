@@ -17,6 +17,7 @@ pipeline {
         stage('Push to registry'){
             steps{
                 sh "docker push localhost:5000/frontimage"
+                sh "docker images"
             }
         }
     }
