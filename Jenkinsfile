@@ -1,6 +1,6 @@
 pipeline {
     agent any
-   stages{
+    stages{
         stage('Clone'){
             steps {
                 git https://github.com/AnneRey/movie-analyst-ui.git
