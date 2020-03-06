@@ -38,11 +38,13 @@ pipeline {
                 sh "ansible-playbook playbook-deploy.yml"
             }
         }
-        stage('Confirm Deploy') {
+        stage('Confirm Deploy'){
             input{
                 message "Is the app running?"
                 ok "Yes!"
             } 
-        }
+            steps{
+                sh "docker images"
+            }
     }
 }
