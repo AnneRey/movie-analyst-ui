@@ -1,5 +1,6 @@
 pipeline {
-    agent devops
+    agent { label 'devops' }
+
     stages{
         stage('Clone front repo'){
             steps {
