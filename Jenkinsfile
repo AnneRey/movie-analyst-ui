@@ -9,6 +9,11 @@ pipeline {
                 sh "ls"
             }
         }
+        stage('Check docker status'){
+            steps{
+                sh "sudo service docker status"
+            }
+        }
         stage('Package'){
             steps{
                 sh "docker build -t localhost:5000/frontimage ."
