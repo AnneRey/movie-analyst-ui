@@ -29,6 +29,7 @@ pipeline {
             steps{
                 sh "docker push localhost:5000/frontimage"
                 sh "docker images"
+                sh "docker ps"
             }
         }
         stage('Deploy with ansible: invoke ansible playbook front'){
