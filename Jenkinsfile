@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Check docker status'){
             steps{
-                sh "sudo service docker status"
+                sh "service docker status"
             }
         }
         stage('Package'){
