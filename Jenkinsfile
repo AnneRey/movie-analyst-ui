@@ -47,5 +47,6 @@ pipeline {
             steps{
                 sh "docker images"
             }
+        }
     }
 }
