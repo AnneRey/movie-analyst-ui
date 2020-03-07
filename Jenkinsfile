@@ -2,7 +2,7 @@ pipeline {
     agent { label 'devops' }
 
     stages{
-        stage('Clone front repo'){
+        stage('Clone front repo and devops repo'){
             steps {
                 git 'https://github.com/AnneRey/movie-analyst-ui.git'
                 sh "pwd"
@@ -12,7 +12,8 @@ pipeline {
         }
         stage('Clone devops repo'){
             steps{
-                sh "cd ../"
+                sh "mkdir devops"
+                sh "cd devops"
                 git 'https://github.com/AnneRey/infrastructure-configuration.git'
                 sh "pwd"
                 sh "git checkout developer"
