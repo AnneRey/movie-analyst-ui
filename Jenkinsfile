@@ -12,6 +12,7 @@ pipeline {
         }
         stage('Clone devops repo'){
             steps{
+                sh "cd ../"
                 git 'https://github.com/AnneRey/infrastructure-configuration.git'
                 sh "pwd"
                 sh "git checkout developer"
@@ -20,9 +21,11 @@ pipeline {
         }
         stage('Package'){
             steps{
+                sh "cd movie-analyst-ui"
                 sh "docker build -t localhost:5000/frontimage ."
                 sh "pwd"
                 sh "docker images"
+                sh "ls"
             }
         }
         stage('Push to registry'){
@@ -30,6 +33,7 @@ pipeline {
                 sh "docker push localhost:5000/frontimage"
                 sh "docker images"
                 sh "docker ps"
+                sh "ls"
             }
         }
         stage('Deploy with ansible: invoke ansible playbook front'){
