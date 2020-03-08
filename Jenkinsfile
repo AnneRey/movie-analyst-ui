@@ -1,5 +1,14 @@
 pipeline {
     agent { label 'devops' }
+    wrappers {
+        credentialsBinding {
+            amazonWebServicesCredentialsBinding {
+            accessKeyVariable("AWS_ACCESS_KEY_ID")
+            secretKeyVariable("AWS_SECRET_ACCESS_KEY")
+            credentialsId("aws_credentials")
+            }
+        }
+    }
 
     stages{
         stage('Clone front repo'){
