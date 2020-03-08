@@ -31,7 +31,7 @@ pipeline {
             steps{
                 sh "pwd"
                 sh "ls"
-                sh "AWS_PROFILE=dev ansible-playbook -i inventory/aws.aws_ec2.yml playbook-deploy.yml"
+                sh "ansible-playbook -i inventory/aws.aws_ec2.yml playbook-deploy.yml"
             }
         }
         stage('Confirm Deploy'){
