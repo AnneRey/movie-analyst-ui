@@ -27,15 +27,15 @@ pipeline {
                 sh "pwd"
             }
         }
-        stage('Deploy with ansible: invoke ansible playbook front'){
-            steps{
-                withCredentials([usernamePassword(credentialsId: 'aws_credentials', accessKeyVariable: 'AWS_ACCESS_KEY_ID', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
-                sh 'echo $AWS_ACCESS_KEY_ID'
-                sh 'echo $AWS_SECRET_ACCESS_KEY'
-                sh "pwd"
-                sh "ls"
-                sh "printenv"
-                sh "ansible-playbook -i inventory/aws.aws_ec2.yml playbook-deploy.yml"
+        stage('Deploy with ansible: front'){
+                withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws_credentials', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
+                    steps{
+                    sh 'echo $AWS_ACCESS_KEY_ID'
+                    sh 'echo $AWS_SECRET_ACCESS_KEY'
+                    sh "pwd"
+                    sh "ls"
+                    sh "printenv"
+                    sh "ansible-playbook -i inventory/aws.aws_ec2.yml playbook-deploy.yml"
                 }
             }
         }
