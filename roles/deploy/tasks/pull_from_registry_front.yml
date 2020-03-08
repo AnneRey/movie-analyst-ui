@@ -11,5 +11,5 @@
     state: started
     volumes:
     - "/etc/docker/movie-analyst-ui:/var/lib/movie-analyst-ui"
-  published-ports:
+    ports:
     - "3030:3030"
