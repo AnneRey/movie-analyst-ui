@@ -12,7 +12,6 @@ pipeline {
         }
         stage('Package'){
             steps{
-                sh "docker rm -rf localhost:5000/frontimage"
                 sh "docker build -t localhost:5000/frontimage ."
                 sh "pwd"
                 sh "docker images"
