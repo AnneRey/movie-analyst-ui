@@ -1,6 +1,6 @@
 - name: Getting image from local registry for front
   docker_image:
-    name: frontimage
+    name: 54.189.87.199:5000/frontimage
     repository: 54.189.87.199:5000
     source: pull
 
