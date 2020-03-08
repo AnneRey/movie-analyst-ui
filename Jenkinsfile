@@ -12,6 +12,7 @@ pipeline {
         }
         stage('Package'){
             steps{
+                sh "docker rm -rf localhost:5000/frontimage"
                 sh "docker build -t localhost:5000/frontimage ."
                 sh "pwd"
                 sh "docker images"
@@ -30,7 +31,6 @@ pipeline {
         stage('Deploy with ansible: invoke ansible playbook front'){
             steps{
                 sh "pwd"
-                sh "cd ansible/"
                 sh "ls"
                 sh "ansible-playbook -i inventory/aws.aws_ec2.yml playbook-deploy.yml"
             }
