@@ -13,5 +13,3 @@
     - "/etc/docker/movie-analyst-ui:/var/lib/movie-analyst-ui"
   published-ports:
     - "3030:3030"
-  env: 
-      BACKEND_URL: "35.164.156.112:3030"
