@@ -31,7 +31,8 @@ pipeline {
             steps{
                 sh "pwd"
                 sh "cd ansible/"
-                sh "ansible-playbook playbook-deploy.yml"
+                sh "pwd"
+                sh "ansible-playbook -i inventory/aws.aws_ec2.yml playbook-deploy.yml"
             }
         }
         stage('Confirm Deploy'){
