@@ -24,6 +24,7 @@ pipeline {
                 sh "docker images"
                 sh "docker ps"
                 sh "ls"
+                sh "pwd"
             }
         }
         stage('Deploy with ansible: invoke ansible playbook front'){
