@@ -31,6 +31,7 @@ pipeline {
             steps{
                 sh "pwd"
                 sh "ls"
+                sh "printenv"
                 sh "ansible-playbook -i inventory/aws.aws_ec2.yml playbook-deploy.yml"
             }
         }
