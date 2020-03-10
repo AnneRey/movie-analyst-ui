@@ -1,9 +1,4 @@
 - name: Log into private registry
-  docker_login:
-    registry: 34.213.141.244:5000
-    username: user
-    password: "123"
-    state: present
   docker_image:
     name: frontimage
     repository: 34.213.141.244:5000
