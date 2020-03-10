@@ -4,7 +4,7 @@
 - name: Run container for front image
   docker_container:
     name: movie-analyst-ui
-    image: frontimage
+    image: 34.213.141.244:5000/frontimage
     state: started
     volumes:
       - "/etc/docker/movie-analyst-ui:/var/lib/movie-analyst-ui"
