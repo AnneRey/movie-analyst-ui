@@ -1,10 +1,14 @@
-- name: Login into registry
-  command: "docker login 54.70.76.36:5000"
+- name: Log into private registry
+  docker_login:
+    registry: 34.213.141.244:5000
+    username: user
+    password: "123"
+    state: present
 
 - name: Getting image from local registry for front
   docker_image:
     name: frontimage
-    repository: 54.70.76.36:5000
+    repository: 34.213.141.244:5000
     source: pull
 
 - name: Run container for front image

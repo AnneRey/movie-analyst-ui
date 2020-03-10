@@ -1,13 +1,20 @@
+- name: Log into private registry
+  docker_login:
+    registry: 34.213.141.244:5000
+    username: user
+    password: "123"
+    state: present
+
 - name: Getting image from local registry for front
   docker_image:
-    name: localhost:5000/frontimage
-    repository: localhost:5000
+    name: backimage
+    repository: 34.213.141.244:5000
     source: pull
 
 - name: Run container for front image
   docker_container:
     name: movie-analyst-api
-    image: localhost:5000/backimage
+    image: backimage
     state: started
     volumes:
     - "/etc/docker/movie-analyst-api:/var/lib/movie-analyst-api"
