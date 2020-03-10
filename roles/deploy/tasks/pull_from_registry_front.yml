@@ -4,8 +4,6 @@
     username: user
     password: "123"
     state: present
-
-- name: Getting image from local registry for front
   docker_image:
     name: frontimage
     repository: 34.213.141.244:5000
