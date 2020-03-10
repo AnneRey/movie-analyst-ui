@@ -1,7 +1,7 @@
 - name: Log into private registry
   docker_image:
     name: frontimage
-    repository: 34.213.141.244:5000
+    repository: 34.213.141.244:5000/frontimage
     source: pull
 
 - name: Run container for front image
