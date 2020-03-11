@@ -1,10 +1,16 @@
-- name: Log into private registry
-  shell: "docker pull  34.213.141.244:5000/frontimage"
+- name: Log into registry
+  docker_login:
+    registry: 35.167.10.15:5000
+    username: user
+    password: "123"
+
+- name: Pull image from registry
+  shell: "docker pull  35.167.10.15:5000/frontimage"
 
 - name: Run container for front image
   docker_container:
     name: movie-analyst-ui
-    image: 34.213.141.244:5000/frontimage
+    image: 35.167.10.15:5000/frontimage
     state: started
     volumes:
       - "/etc/docker/movie-analyst-ui:/var/lib/movie-analyst-ui"

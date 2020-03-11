@@ -44,16 +44,5 @@ pipeline {
         }
       }
     }
-
-    stage('Confirm Deploy') {
-      input {
-        message 'Is the app running?'
-        id 'Yes!'
-      }
-      steps {
-        sh 'docker images'
-      }
-    }
-
   }
 }
