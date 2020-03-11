@@ -1,8 +1,5 @@
 - name: Log into registry
-  docker_login:
-    registry: 35.167.10.15:5000
-    username: user
-    password: "123"
+  shell: "docker login 35.167.10.15:5000 -u user -p 123"
 
 - name: Pull image from registry
   shell: "docker pull  35.167.10.15:5000/frontimage"
