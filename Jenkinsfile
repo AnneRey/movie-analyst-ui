@@ -42,7 +42,14 @@ pipeline {
           sh 'curl http://localhost:5000/v2/_catalog'
           sh 'ansible-playbook -i inventory/aws.aws_ec2.yml playbook-deploy.yml --private-key /home/ubuntu/aws -vvv'
         }
+<<<<<<< HEAD
       }
     }
+=======
+
+      }
+    }
+
+>>>>>>> 4c2ba95e8048b9b6de5831398344e158b1f73933
   }
 }
