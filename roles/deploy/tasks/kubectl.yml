@@ -17,6 +17,4 @@
     owner: root
 
 - name: Execute deploy script
-  command: "bash -lc \"/home/ubuntu/deploy.sh\""
-  async: 5
-  poll: 0
+  shell: "bash -lc \"/home/ubuntu/deploy.sh\""
