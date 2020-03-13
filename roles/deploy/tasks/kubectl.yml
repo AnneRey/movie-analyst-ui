@@ -17,4 +17,4 @@
     owner: root
 
 - name: Execute deploy script
-  command: "/bin/bash/-c home/ubuntu/deploy.sh"
+  command: "bash -lc \"/home/ubuntu/deploy.sh\""
