@@ -1,6 +1,6 @@
 ---
 
-- hosts: tag_Name__	arey-kubeInstance 
+- hosts: tag_Name__	arey_kubeInstance 
   user: ubuntu
   become: true
   vars_files:
