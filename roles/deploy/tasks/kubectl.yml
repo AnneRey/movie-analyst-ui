@@ -1,2 +1,2 @@
 - name: Aplly with kubectl
-  shell: "kubectl apply -f kubernetes/"
+  shell: "pwd"
