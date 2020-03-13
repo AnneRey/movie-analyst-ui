@@ -41,7 +41,7 @@ pipeline {
           sh 'ls'
           sh 'printenv'
           sh 'curl http://localhost:5000/v2/_catalog'
-          sh 'ansible-playbook -i inventory/aws.aws_ec2.yml playbook-deploy.yml -vvv'
+          sh 'ansible-playbook -i inventory/aws.aws_ec2.yml playbook-deploy.yml'
         }
 
       }
