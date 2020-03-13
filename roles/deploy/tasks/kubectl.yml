@@ -1,7 +1,13 @@
+- name: create directory for repo
+  file:
+    path: /home/ubuntu/repo
+    owner: ubuntu
+    state: directory
+    mode: '0770'
 - name: Prepare git
   git: 
     repo: 'https://github.com/AnneRey/kubernetes.git'
-    dest: /home/ubuntu
+    dest: /home/ubuntu/repo
 
 - name: Checkout to developer
   shell: "cd /home/ubuntu/kubernetes/"
