@@ -17,4 +17,9 @@
     owner: root
 
 - name: Execute deploy script
-  shell: "bash -lc \"/home/ubuntu/deploy.sh\""
+  shell: "bash -lc \"deploy.sh\""
+  args:
+    chdir: "/home/ubuntu"
+  become: yes
+  become_method: sudo
+  become_user: root
