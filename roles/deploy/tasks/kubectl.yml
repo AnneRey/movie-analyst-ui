@@ -2,5 +2,5 @@
   shell: "pwd"
 
 - name: Delete kubectl apply
-  command: "kubectl delete -f"
+  command: "kubectl delete -f "
 
