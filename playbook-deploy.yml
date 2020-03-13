@@ -1,6 +1,6 @@
 ---
 
-- hosts: tag_Name__	arey_kubeInstance 
+- hosts: tag_Name__arey_kubeInstance 
   user: ubuntu
   become: true
   tasks:
