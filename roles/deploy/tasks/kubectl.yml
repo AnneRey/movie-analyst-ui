@@ -17,8 +17,7 @@
     owner: root
 
 - name: Execute deploy script
-  script: "/home/ubuntu/deploy.sh"
-  remote_src: yes
+  command: "bash /home/ubuntu/deploy.sh"  
   become: yes
   become_method: sudo
   become_user: root
