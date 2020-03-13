@@ -7,7 +7,8 @@ pipeline {
       steps {
         git 'https://github.com/AnneRey/movie-analyst-ui.git'
         sh 'pwd'
-        sh 'git checkout developer'
+        sh "ls"
+        sh 'git checkout developer-kube'
         sh 'ls'
       }
     }
