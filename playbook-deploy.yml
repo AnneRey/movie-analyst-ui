@@ -3,8 +3,6 @@
 - hosts: tag_Name__	arey_kubeInstance 
   user: ubuntu
   become: true
-  vars_files:
-    - variables.yml
   tasks:
     - name: deploy
       include_role:
