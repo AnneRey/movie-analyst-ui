@@ -2,5 +2,9 @@
   shell: "pwd"
 
 - name: Delete kubectl apply
-  command: "kubectl delete -f "
+  command: "kubectl delete -f kubernetes/"
+  ignore_errors: yes
+
+- name: Aplly with kubectl
+  command: "kubectl apply -f kubernetes/"
 
