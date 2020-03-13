@@ -10,10 +10,10 @@
     dest: /home/ubuntu/repo
 
 - name: Checkout to developer
-  shell: "cd /home/ubuntu/repo/kubernetes/"
+  command: "cd /home/ubuntu/repo/kubernetes/"
 
 - name: Checkout
-  shell: "git checkout developer"
+  command: "git checkout developer"
 
 - name: Aplly with kubectl
-  shell: "kubectl apply -f kubernetes/"
+  command: "kubectl apply -f kubernetes/"
