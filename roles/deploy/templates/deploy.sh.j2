@@ -2,5 +2,5 @@
 
 cd /home/ubuntu
 
-kubectl delete -f kubernetes/
-kubectl apply -f kubernetes/
+kubectl --kubeconfig /home/ubuntu/.kube/conf delete -f kubernetes/
+kubectl --kubeconfig /home/ubuntu/.kube/conf apply -f kubernetes/
