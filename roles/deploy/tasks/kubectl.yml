@@ -10,7 +10,7 @@
     dest: /home/ubuntu/repo
 
 - name: Checkout to developer
-  shell: "cd /home/ubuntu/kubernetes/"
+  shell: "cd /home/ubuntu/repo/kubernetes/"
 
 - name: Checkout
   shell: "git checkout developer"
