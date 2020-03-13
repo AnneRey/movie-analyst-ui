@@ -1,11 +1,20 @@
-- name: Aplly with kubectl
-  shell: "pwd"
+#- name: Aplly with kubectl
+#  shell: "pwd"
 
-- name: Delete kubectl apply
-  command: "kubectl delete -f kubernetes/"
-  ignore_errors: yes
-  
+#- name: Delete kubectl apply
+#  command: "kubectl delete -f kubernetes/"
+#  ignore_errors: yes
 
-- name: Aplly with kubectl
-  command: "kubectl apply -f kubernetes/"
 
+#- name: Aplly with kubectl
+#  command: "kubectl apply -f kubernetes/"
+
+- name: Copy deploy script
+  template:
+    src: deploy.sh.j2
+    dest: /home/ubuntu/deploy.sh
+    mode: 0777
+    owner: root
+
+- name: Execute deploy script
+  command: "./home/ubuntu/deploy.sh"
