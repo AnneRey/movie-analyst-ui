@@ -1,0 +1,13 @@
+- name: Prepare git
+  git: 
+    repo: 'https://github.com/AnneRey/kubernetes.git'
+    dest: /home/ubuntu/
+
+- name: Checkout to developer
+  shell: "cd /home/ubuntu/kubernetes/"
+
+- name: Checkout
+  shell: "git checkout developer"
+
+- name: Aplly with kubectl
+  shell: "kubectl apply -f kubernetes/"
