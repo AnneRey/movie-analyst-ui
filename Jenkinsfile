@@ -7,7 +7,7 @@ pipeline {
       steps {
         git 'https://github.com/AnneRey/movie-analyst-ui.git'
         sh 'pwd'
-        sh "ls"
+        sh 'ls'
         sh 'git checkout developer-kube'
         sh 'ls'
       }
@@ -41,9 +41,11 @@ pipeline {
           sh 'ls'
           sh 'printenv'
           sh 'curl http://localhost:5000/v2/_catalog'
-          sh 'ansible-playbook -i inventory/aws.aws_ec2.yml playbook-deploy.yml'
+          sh 'ansible-playbook -i inventory/aws.aws_ec2.yml playbook-deploy.yml -vvv'
         }
+
       }
     }
+
   }
 }
