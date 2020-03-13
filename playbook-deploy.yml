@@ -1,7 +1,7 @@
 ---
 
 - hosts: tag_Name__arey_kubeInstance 
-  user: ubuntu
+  remote_user: ubuntu
   become: true
   become_user: root
   become_method: sudo
