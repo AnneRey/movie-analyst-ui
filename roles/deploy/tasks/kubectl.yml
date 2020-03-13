@@ -18,6 +18,4 @@
 
 - name: Execute deploy script
   command: "bash /home/ubuntu/deploy.sh"  
-  become: yes
-  become_method: sudo
-  become_user: root
+  remote_user: ubuntu
